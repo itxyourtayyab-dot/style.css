@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 3 - Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Calculator Project</h1>
+        <p>Assignment 3 | Simple & Scientific Calculator</p>
+    </header>
+
+    <nav>
+        <button onclick="showCalculator('simple')">Simple Calculator</button>
+        <button onclick="showCalculator('scientific')">Scientific Calculator</button>
+    </nav>
+
+    <main>
+        <section id="simple" class="calculator">
+            <h2>Simple Calculator</h2>
+            <input type="text" id="simpleDisplay"
+                   placeholder="0" readonly>
+
+            <div class="buttons">
+                <button class="clear" onclick="clearSimple()">AC</button>
+                <button onclick="deleteSimple()">DEL</button>
+                <button onclick="simpleInput('/')">÷</button>
+                <button class="operator" onclick="simpleInput('*')">×</button>
+
+                <button onclick="simpleInput('7')">7</button>
+                <button onclick="simpleInput('8')">8</button>
+                <button onclick="simpleInput('9')">9</button>
+                <button class="operator" onclick="simpleInput('-')">−</button>
+
+                <button onclick="simpleInput('4')">4</button>
+                <button onclick="simpleInput('5')">5</button>
+                <button onclick="simpleInput('6')">6</button>
+                <button class="operator" onclick="simpleInput('+')">+</button>
+
+                <button onclick="simpleInput('1')">1</button>
+                <button onclick="simpleInput('2')">2</button>
+                <button onclick="simpleInput('3')">3</button>
+                <button class="equal" onclick="calculateSimple()">=</button>
+
+                <button onclick="simpleInput('0')">0</button>
+                <button onclick="simpleInput('.')">.</button>
+            </div>
+        </section>
+
+        <section id="scientific" class="calculator" hidden>
+            <h2>Scientific Calculator</h2>
+            <input type="text" id="scientificDisplay"
+                   placeholder="Enter expression">
+
+            <div class="buttons scientific-buttons">
+                <button class="clear" onclick="clearScientific()">AC</button>
+                <button onclick="scientificDelete()">DEL</button>
+                <button onclick="scientificInput('(')">(</button>
+                <button onclick="scientificInput(')')">)</button>
+
+                <button onclick="scientificInput('sin(')">sin</button>
+                <button onclick="scientificInput('cos(')">cos</button>
+                <button onclick="scientificInput('tan(')">tan</button>
+                <button onclick="scientificInput('sqrt(')">√</button>
+
+                <button onclick="scientificInput('log(')">log</button>
+                <button onclick="scientificInput('ln(')">ln</button>
+                <button onclick="scientificInput('^2')">x²</button>
+                <button onclick="scientificInput('^')">xʸ</button>
+
+                <button onclick="scientificInput('7')">7</button>
+                <button onclick="scientificInput('8')">8</button>
+                <button onclick="scientificInput('9')">9</button>
+                <button onclick="scientificInput('/')">÷</button>
+
+                <button onclick="scientificInput('4')">4</button>
+                <button onclick="scientificInput('5')">5</button>
+                <button onclick="scientificInput('6')">6</button>
+                <button onclick="scientificInput('*')">×</button>
+
+                <button onclick="scientificInput('1')">1</button>
+                <button onclick="scientificInput('2')">2</button>
+                <button onclick="scientificInput('3')">3</button>
+                <button onclick="scientificInput('-')">−</button>
+
+                <button onclick="scientificInput('0')">0</button>
+                <button onclick="scientificInput('.')">.</button>
+                <button onclick="scientificInput('pi')">π</button>
+                <button onclick="scientificInput('e')">e</button>
+
+                <button onclick="scientificInput('+')">+</button>
+                <button class="equal" onclick="calculateScientific()">=</button>
+            </div>
+            <p class="hint">Trigonometric functions use degrees.
+                Example: sin(30), sqrt(25), log(100).</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Web Development Assignment 3</p>
+        <p>HTML | CSS | JavaScript</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="scientific.js"></script>
+</body>
+</html>
